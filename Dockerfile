@@ -26,7 +26,5 @@ RUN apk update && \
     yarn && \
     rm -rf /var/cache/apk/*
 
-COPY .config /root/.config
-
 WORKDIR /usr/src/nvim
 

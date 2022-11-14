@@ -30,11 +30,36 @@ end
 return packer.startup(function(use)
 	-- packer can manage itself
 	use("wbthomason/packer.nvim")
-
 	use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
+	-- look & feel
 	use("tribela/vim-transparent") -- make theme transparent
 	use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
+	use("kyazdani42/nvim-web-devicons") -- vs-code like icons
+	use("nvim-lualine/lualine.nvim") -- statusline
+
+	-- syntax highlighting
+	use({
+		"nvim-treesitter/nvim-treesitter",
+		run = function()
+			require("nvim-treesitter.install").update({ with_sync = true })
+		end,
+	})
+
+	-- shortcuts
+	use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
+	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
+	use("numToStr/Comment.nvim") -- commenting with gc
+
+	-- file explorer
+	use("nvim-tree/nvim-tree.lua")
+
+	-- fuzzy finding with telescope
+	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
+	use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
+
+	-- toggle terminal
+	use("akinsho/toggleterm.nvim")
 
 	if packer_bootstrap then
 		require("packer").sync()

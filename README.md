@@ -23,7 +23,7 @@ docker build -t nvim .
 Add this alias to your `~/.zprofile`:
 
 ```
-alias nv="docker run --rm -it -v $(pwd):/usr/src/nvim -v nvim:/root/.local/share/nvim nvim nvim"
+alias nv="docker run --rm -it -v $(pwd):/usr/src/nvim -v nvim:/root/.local/share/nvim -v /Path/To/This/Repo/.config/nvim:/root/.config/nvim nvim nvim"
 ```
 
 # Usage
