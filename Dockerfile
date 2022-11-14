@@ -30,4 +30,3 @@ COPY .config /root/.config
 
 WORKDIR /usr/src/nvim
 
-ENTRYPOINT ["nvim"]

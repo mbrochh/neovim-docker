@@ -16,13 +16,17 @@ use.
 ```
 git clone git@github.com:mbrochh/neovim-docker.git
 cd neovim-docker
+docker volume create nvim
 docker build -t nvim .
+```
+
+Add this alias to your `~/.zprofile`:
+
+```
+alias nv="docker run --rm -it -v $(pwd):/usr/src/nvim -v nvim:/root/.local/share/nvim nvim nvim"
 ```
 
 # Usage
 
-`cd` into your top level project directory, then run the following command:
+`cd` into your top level project directory, then start neovim with `nv`.
 
-```
-docker run --rm -it -v $(pwd):/mnt/workspace nvim [filename]
-```
