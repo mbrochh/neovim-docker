@@ -12,6 +12,7 @@ RUN apk update && \
     bash \
     build-base \
     curl \
+    fzf \
     gcc \
     git \
     grep \
