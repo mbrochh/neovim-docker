@@ -5,6 +5,8 @@ local keymap = vim.keymap
 -- general keymaps
 keymap.set("n", "<C-x>", ":nohl<CR>") -- clear search highlights
 keymap.set("n", "x", '"_x') -- do not copy deleted character into register
+keymap.set("n", "<Leader>tt", ":ToggleTerm<CR>") -- toggleterm
+keymap.set("v", "<Leader>s", ":sort<CR>") -- sort lines
 
 -- telescope
 keymap.set("n", "<Leader>fe", ":Telescope file_browser hidden=true no_ignore=true<CR>")
