@@ -22,6 +22,7 @@ RUN apk update && \
     neovim \
     python3-dev \
     py3-pip \
+    ripgrep \
     zlib-dev \
     npm \
     yarn && \
